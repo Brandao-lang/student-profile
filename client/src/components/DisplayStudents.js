@@ -11,6 +11,7 @@ export default function DisplayStudents() {
     })
 
     const handleChange = (e) => {
+        // this function handles the search inputs for students by name, tag, or both //
         setInput({
             ...input,
             [e.target.name]: e.target.value
@@ -18,9 +19,9 @@ export default function DisplayStudents() {
     }
     
     useEffect(() => {
-        axios.get('https://api.hatchways.io/assessment/students')
+        // this useEffect hook will fetch all students from the API, add a new 'tags' key to every student with an empty array as the value, and assign the data to the state array 'students' //
+        const getStudents = async() => await axios.get('https://api.hatchways.io/assessment/students')
             .then(res => {
-                // console.log(res.data.students)
                 const allStudents = res.data.students
 
                 for (let i = 0; i < allStudents.length; i++) {
@@ -32,11 +33,10 @@ export default function DisplayStudents() {
                 console.log(`students API fail, ${err}`)
             })
 
+        getStudents()
 
     },[setStudents])
 
-    // console.log(students)
-    // console.log(input)
 
     return (
        <div className='students-list'>
@@ -58,17 +58,16 @@ export default function DisplayStudents() {
             <br/>
         {
             students.filter(student => {
-                let fullName = student.firstName.toLowerCase() + ' ' + student.lastName.toLowerCase()
-                let allTags = student.tags.toString()
-                // console.log(student.tags)
+                const fullName = `${student.firstName.toLowerCase()} ${student.lastName.toLowerCase()}`
+                const allTags = student.tags.toString().toLowerCase()
 
                 if (!input.name && !input.tag) {
                     return true
                 }
-                if (fullName.includes(input.name.toLowerCase()) && allTags.includes(input.tag)) {
+                if (fullName.includes(input.name.toLowerCase()) && allTags.includes(input.tag.toLocaleLowerCase())) {
                     return true
                 }
-
+                
                 return false
                 
             })
