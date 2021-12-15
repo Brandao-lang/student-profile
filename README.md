@@ -1,23 +1,15 @@
-
 # Submission Detials
 
-Please read the following details before you click 'Mark as Done' to your submission 
-1. Make sure that all your code is merged to the Main branch
-2. Include all files necessary to run your app, NOT just the source code, except for the **node_modules** folder
-3. Here is an example of how we will test your code 
+For a quick demo visit https://students-directory.herokuapp.com/
+
+For use on your local machine run the following commands:
 
 ```bash
-git clone https://github.com/<username>/<repo-name>.git
+git clone https://github.com/Brandao-lang/student-profile-1021.git
 npm install # or yarn install
-npm start  
+cd client
+npm install
+npm start
 ```
 
-Your app should be running on `http://localhost:3000` or whichever PORT number you specify.
-
-If your app had a different instructions to start, then you must edit this README.md file and list out the instructions to successfully run your code.
-
-
-
-
-
-
+The root of the folder and the client folder contain seperate package.json, therefore npm install has to run in both directories
