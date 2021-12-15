@@ -2,6 +2,8 @@
 
 For a quick demo visit https://students-directory.herokuapp.com/
 
+(app will take a few moments to startup)
+
 For use on your local machine run the following commands:
 
 ```bash
