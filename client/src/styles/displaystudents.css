@@ -1,3 +1,5 @@
+/* student container styling */
+
 .students-list {
   background-color: #fff;
   border-radius: 2%;
@@ -7,6 +9,8 @@
   margin-top: 7%;
   overflow: auto;
 }
+
+/* student card styling */
 
 .student img {
   float: left;
@@ -44,8 +48,7 @@
 }
 
 .student-bio {
-  /* Fix this margin */
-  margin-left: 210px;
+  margin-left: 13em;
 }
 
 .hide-grades {
@@ -92,6 +95,14 @@
   padding: 10px;
 }
 
+/* Smaller Screen & Mobile views */
+
+@media only screen and (max-width: 1110px) {
+  .tag-container input {
+    width: 40%;
+  }
+}
+
 @media only screen and (max-width: 750px) {
   .search-container {
     width: 95%;
@@ -129,6 +140,13 @@
     border-radius: 50%;
   }
 
+  .student h1 {
+    margin: 0 auto;
+    font-size: 2em;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
   .tag-container input {
     width: 28%;
   }
@@ -139,5 +157,11 @@
 
   .mobile-grade-toggle-btn {
     display: inline-block;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: #fff;
+    color: black;
+    height: 2em;
+    width: 2em;
   }
 }
